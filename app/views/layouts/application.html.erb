@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tasks</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div id="up"></div>
+	<h2 id="title">SIMPLE TODO LISTS</h2>
+	<h4 id="h2">FROM RUBY GARAGE</h4>
+    <%= yield %>
+    <h6 id="h3">© Ruby Garage</h6>
+  <div id="down"></div>
+  </body >
+</html>
