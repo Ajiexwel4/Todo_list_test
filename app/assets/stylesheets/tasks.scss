@@ -1,3 +1,80 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.first_container, .second_container {
+	 margin-left: 27%;
+	
+	 
+	tbody {
+		background-color: #FFFFFF;		
+	}
+
+	.lline {
+		padding: 2px;
+	}
+
+	
+}
+
+.table_head_pname {
+	height: 35px;
+	background-color: #4373B1;
+	color: white;
+	.glyphicon-list-alt	{color: #060000;}
+	font-size: 16px;	
+}
+
+.glyphicon-pencil, .glyphicon-trash {color: #98B0D2;}
+.glyphicon-plus {color: #5C9273; }
+
+.table_head_add {
+	background-color: #D0D0D0;
+	font-size: 20px;
+	input, .btn {
+		font-size: 10px;
+		height: 25px;
+		border-radius:0;
+	}
+	input {
+		margin-left: 5px;
+		border-radius: 5px 0 0 5px;
+	}
+	.btn {
+		color: white;
+		margin-left: -5px;
+		border-radius: 0 5px 5px 0;
+	}	
+}
+
+.table_head_pname, .table_head_add {
+	td, th {
+    border: none !important;
+    padding:4px;
+	}
+}
+
+.tasks_name {
+	height: 25px;
+	width: 500px;
+	padding: 2%;
+	color: #90959B;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.btn-primary {
+	margin-left: 56%; 
+	font-weight: bolder;
+	font-size: 16px;
+	.glyphicon-plus { 
+		color: #243654;
+		font-size: 20px;
+		margin-left: -5px;
+		padding-right: 5px;
+		padding-bottom: 5px;			
+	}
+}
+
+    

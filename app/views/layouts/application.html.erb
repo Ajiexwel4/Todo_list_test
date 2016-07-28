@@ -10,10 +10,20 @@
 
   <body>
   <div id="up"></div>
-	<h2 id="title">SIMPLE TODO LISTS</h2>
-	<h4 id="h2">FROM RUBY GARAGE</h4>
-    <%= yield %>
-    <h6 id="h3">© Ruby Garage</h6>
-  <div id="down"></div>
-  </body >
+    <div class="container">
+      
+	    <h2>SIMPLE TODO LISTS</h2>
+	    <h4>FROM RUBY GARAGE</h4>
+    
+      <div id="main-container" class="container">
+        <div class="row">
+          <div class="col-xs-9">
+            <%= yield %>
+          </div>
+        </div>   
+      </div>
+      <h6>© Ruby Garage</h6>       
+    </div>      
+    <div id="down"></div>
+  </body>
 </html>

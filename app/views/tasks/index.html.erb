@@ -1,31 +1,86 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Complete the test task for Ruby Garage</h1>
+ <!--первая таблица -->
+<div class="first_container container">
+  <div class="table-responsive">
+    <table class="table-hover table-bordered">
+      <thead>
+        <tr class = "table_head_pname">
+          <th colspan="2"><i class="glyphicon glyphicon-list-alt"></i></th>
+          <th colspan="2">Complete the test task for Ruby Garage</th>
+          <th><i class="glyphicon glyphicon-pencil"></i></th>
+          <th><i class="glyphicon glyphicon-trash"></i></th>
+        </tr>
+    
+        <tr class = "table_head_add">
+          <th colspan="2"><i class="glyphicon glyphicon-plus"></i></th>         
+          <th><input type="text" class="form-control" placeholder="Start typing here to create a task..."></th>
+          <!-- <th>Project</th> -->
+        <th colspan="3"><%= link_to 'Add Task', new_task_path, class: 'btn btn-success' %></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th>Project</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <tbody class="table-hover">
+      <% @tasks.order("status DESC").limit(4).each do |task| %>
+        <tr class="active">
+          <td><input type="checkbox" value=""><% task.status %></input></td>
+          <td class ="lline"></td>
+          <td class="tasks_name"><%= task.name %></td>
+          <!-- <td><%= task.project_id %></td> -->
+          <td><%#= link_to 'Show', task %></td>
+          <td><%= link_to '', edit_task_path(task), class: 'glyphicon glyphicon-pencil' %></td>
+          <td><%= link_to '', task, class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>                 
+    </tbody>
+    </table>
+  </div>
+</div>
+<br><br>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.name %></td>
-        <td><%= task.status %></td>
-        <td><%= task.project_id %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- вторая таблица -->
+<div class="second_container container">
+  <div class="table-responsive">
+    <table class="table-hover table-bordered">
+      <thead>
+        <tr class = "table_head_pname">
+          <th colspan="2"><i class="glyphicon glyphicon-list-alt"></i></th>
+          <th colspan="2">Complete the test task for Ruby Garage</th>
+          <th><i class="glyphicon glyphicon-pencil"></i></th>
+          <th><i class="glyphicon glyphicon-trash"></i></th>
+        </tr>
+    
+        <tr class = "table_head_add">
+          <th colspan="2"><i class="glyphicon glyphicon-plus"></i></th>         
+          <th><input type="text" class="form-control" placeholder="Start typing here to create a task..."></th>
+          <!-- <th>Project</th> -->
+        <th colspan="3"><%= link_to 'Add Task', new_task_path, class: 'btn btn-success' %></th>
+        </tr>
+      </thead>
+
+    <tbody class="table-hover">
+      <% @tasks.order("status DESC").limit(4).each do |task| %>
+        <tr class="active">
+          <td><input type="checkbox" value=""><% task.status %></input></td>
+          <td class ="lline"></td>
+          <td class="tasks_name"><%= task.name %></td>
+          <!-- <td><%= task.project_id %></td> -->
+          <td><%#= link_to 'Show', task %></td>
+          <td><%= link_to '', edit_task_path(task), class: 'glyphicon glyphicon-pencil' %></td>
+          <td><%= link_to '', task, class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>                 
+    </tbody>
+    </table>
+  </div>
+</div>
+<br>
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+  <button type="button" class="btn btn-primary">
+    <div><i class="glyphicon glyphicon-plus"></i> Add TODO List</div>
+  </button> 
+  <br>
+  <br>
+
