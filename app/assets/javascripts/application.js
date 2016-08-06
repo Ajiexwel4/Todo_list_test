@@ -15,3 +15,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+var main = function(){
+	$('.t_onlink,.p_onlink').hide();
+	$('td').removeClass('t_menu_replace');
+	$('.tasl_name').mouseover(function(){
+		
+	});
+	
+// $('.t_onlink,.p_onlink').fadeIn();
+
+
+
+
+};
+
+$(document).ready(main);
