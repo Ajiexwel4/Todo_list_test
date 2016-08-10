@@ -16,19 +16,12 @@
 //= require turbolinks
 //= require_tree .
 
+// $(document).ready(function(){
 
-var main = function(){
-	$('.t_onlink,.p_onlink').hide();
-	$('td').removeClass('t_menu_replace');
-	$('.tasl_name').mouseover(function(){
-		
-	});
-	
-// $('.t_onlink,.p_onlink').fadeIn();
+// 	$('#add_todo').button({
+// 		icons: {
+// 			primary: "ui-icon-circle-plus"
+// 		}
+// 	});
 
-
-
-
-};
-
-$(document).ready(main);
+// });
