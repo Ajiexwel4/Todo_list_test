@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :tasks
   resources :projects
   post 'projects/new'
+  post 'tasks/new'
   root 'tasks#index'
 end

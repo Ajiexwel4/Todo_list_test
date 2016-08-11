@@ -2,20 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//обертка-контейнер таблицы 
 .table_container {
-	margin-left: -10%;
-	 	 
+	margin-left: -10%;	 	 
 	tbody {
 		background-color: #FFFFFF;		
 	}
-
 	.lline {
 		padding: 2px;
-	}
-
-	
+	}	
 }
 
+//шапка таблицы(название проекта)
 .table_head_pname {
 	cursor: pointer;
 	height: 35px;
@@ -25,9 +23,11 @@
 	font-size: 16px;	
 }
 
-.glyphicon-pencil, .glyphicon-trash {color: #98B0D2;}
+//стилизация иконок
+.glyphicon-pencil, .glyphicon-trash, .ui-icon {color: #98B0D2; cursor: pointer;}
 .glyphicon-plus {color: #5C9273; }
 
+//шапка таблицы(добавление задачи)
 .table_head_add {
 	background-color: #D0D0D0;
 	font-size: 20px;
@@ -47,6 +47,7 @@
 	}	
 }
 
+//корректировка шапки таблицы
 .table_head_pname, .table_head_add {
 	td, th {
     border: none !important;
@@ -54,6 +55,7 @@
 	}
 }
 
+//ячейка с названием задачь
 .tasks_name {
 	cursor: pointer;
 	height: 25px;
@@ -62,10 +64,10 @@
 	color: #90959B;
 	font-family: Helvetica;
 	font-weight: bold;
-	font-size: 12px;
-		
+	font-size: 12px;		
 }
 
+//кнопка добавления нового проэкта
 .btn-primary {
 	margin-left: 30%;
 	font-weight: bolder;
@@ -79,8 +81,15 @@
 	}
 }
 
-.switch {
-	display: none;
-}    
-
+// удаление фона со ссылок
 a:link { background:none; }
+
+//корректировка границ области кнопок
+tr .t_onlink, .p_onlink {
+	border: 0.5px !important;
+}
+
+// скрывает кнопки в строке задач
+.p_onlink, .t_onlink {
+	display: none;
+} 

@@ -1,46 +1,46 @@
 <p id="notice"><%= notice %></p>
 
- <!--первая таблица -->
-  <% Project.all.limit(2).each do |project| %>
+ <!--формирование таблиц в цикле с лимитом в 2 проекта -->
+  <% Project.all.order("id").limit(2).each do |project| %>
 <div class="table_container container">
   <div class="table-responsive">
    
     <table class="table-hover table-bordered">
+      <!-- Шапка таблицы --> 
       <thead>
-      <!-- Шапка таблицы/проекты -->
-          
+       <!-- Название проекта  -->
        <tr class = "table_head_pname" data-project_id="<%= project.id%>">
           <th colspan="2"><i class="glyphicon glyphicon-list-alt"></i></th>
           <th colspan="2"><%= project.name %></th>
-          <td class="p_onlink"><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_project_path(project) %></td>
-          <th class="p_onlink"><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td colspan ="2" class="switch"></th>
+          <th class="p_onlink"><i class="glyphicon glyphicon-pencil edit_p"></i></th>
+          <th class="p_onlink"><i class="glyphicon glyphicon-trash delete_p"></i></th>
         </tr>
     
         <!-- Добавление новых задач -->
         <tr class = "table_head_add">
           <th colspan="2"><i class="glyphicon glyphicon-plus"></i></th>         
           <th><input type="text" class="form-control" placeholder="Start typing here to create a task..."></th>
-          <th colspan="3"><%= button_to 'Add Task', new_task_path, class: 'btn btn-success' %></th>
+          <th colspan="3"><%= button_tag 'Add Task', class: 'btn btn-success' %></th>
         </tr>
       </thead>
-    
+
+    <!-- Тело таблицы/перечень задач проекта с лимитом отображения в 4 задачи  -->
     <tbody class="table-hover">
       <% @tasks.where(project_id: project.id).order("status DESC").limit(4).each do |task| %>
         
         <!-- список задач -->      
         <tr class="active" data-task_id="<%= task.id %>">
           <td class="task_checkbox"><%= check_box_tag :task, 1, task.status %></td>
-          <!-- пустая ячейк-двойная линия -->
-          <td class ="lline" ></td>
-          <!-- имя задачи -->
+          <td class ="lline"></td>
           <td class="tasks_name"><%= task.name %></td>
           <td colspan ="3" class="switch"></td>
-          <td class="t_onlink"></td>
-          <td class="t_onlink"><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_task_path(task) %></td>
-          <td class="t_onlink"><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="t_onlink"><span class="ui-icon ui-icon-carat-2-n-s"></span></td>
+          <td class="t_onlink"><i class="glyphicon glyphicon-pencil edit_t"></i></td>
+          <td class="t_onlink"><i class="glyphicon glyphicon-trash delete_t"></i></td>
         </tr>
 
-      <% end %>                 
+      <% end %>
     </tbody>
     </table>
    </div>
@@ -48,14 +48,11 @@
 <br><br>
 <% end %> 
 <br>
-<!-- Кнопка -->
-<%#= button_to 'Add TODO List', new_project_path, class: 'btn btn-primary' %>
-<!-- Кнопка как с + но без ссылки -->
+
+<!-- Кнопка добавления нового проекта  -->
 <%= button_tag '<div><i class="glyphicon glyphicon-plus"></i> Add TODO List</div>'.html_safe, class: "btn btn-primary"%>
 
-<!-- <button id="add_todo">Add TODO List</button> -->
-
-<br><br>
+<br><br><br><br>
 
 
 
