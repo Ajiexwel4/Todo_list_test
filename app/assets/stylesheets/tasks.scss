@@ -5,12 +5,8 @@
 //обертка-контейнер таблицы 
 .table_container {
 	margin-left: -10%;	 	 
-	tbody {
-		background-color: #FFFFFF;		
-	}
-	.lline {
-		padding: 2px;
-	}	
+	tbody { background-color: #FFFFFF; }
+	.lline { padding: 2px; }
 }
 
 //шапка таблицы(название проекта)
@@ -45,6 +41,7 @@
 		margin-left: -5px;
 		border-radius: 0 5px 5px 0;
 	}	
+	.form-control { width: 500px; }
 }
 
 //корректировка шапки таблицы
@@ -55,7 +52,7 @@
 	}
 }
 
-//ячейка с названием задачь
+//ячейка с названием задачь 
 .tasks_name {
 	cursor: pointer;
 	height: 25px;
@@ -69,7 +66,7 @@
 
 //кнопка добавления нового проэкта
 .btn-primary {
-	margin-left: 30%;
+	margin-left: 33%;
 	font-weight: bolder;
 	font-size: 16px;
 	.glyphicon-plus { 
@@ -81,9 +78,6 @@
 	}
 }
 
-// удаление фона со ссылок
-a:link { background:none; }
-
 //корректировка границ области кнопок
 tr .t_onlink, .p_onlink {
 	border: 0.5px !important;
@@ -93,3 +87,17 @@ tr .t_onlink, .p_onlink {
 .p_onlink, .t_onlink {
 	display: none;
 } 
+
+// удаление фона со ссылок
+a:link { background:none; }
+
+//таймер
+#getting-started { 
+	padding: 7px 0 0 3px; 
+	font-weight: bolder; 
+	color: crimson;
+}
+
+
+
+

@@ -23,7 +23,15 @@ body, html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	overflow: hidden;
+	overflow: hidden;	
+}
+
+#flash { 
+	text-align: center; 
+	position: fixed;
+	top: 10px;
+	left: 0px;
+	font: 16px Candal, sans-serif;
 	
 }
 
@@ -35,11 +43,13 @@ body, html {
 	left:0; right:0;
 
 }
+
 #up {top:0;} 
 #down {bottom:0;  position: fixed;}
 
 h2, h4, h6 { 
 	text-align: center;
+	margin-left: 3%;
 	}
 h2 {
 	font-weight: bolder;
@@ -52,4 +62,6 @@ h4 {
 h6 {
 	color: white;
 }
+
+
 

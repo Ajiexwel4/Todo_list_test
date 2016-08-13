@@ -9,7 +9,7 @@ Project.delete_all
 Task.delete_all
 
 Project.create(id: 1, name: 'Complate the task for Ruby Garage')
-Task.create(id: 1, name: 'Open this mock-up in Adobe Fireworks', status: true, project_id: 1)
+Task.create(id: 1, name: 'Open this mock-up in Adobe Fireworks', status: false, project_id: 1)
 Task.create(id: 2, name: 'Attentively check the file', status: false, project_id: 1)
 Task.create(id: 3, name: 'Write HTML & CSS', status: false, project_id: 1)
 Task.create(id: 4, name: 'Add Javascript to implement adding / editing / removing for todo items

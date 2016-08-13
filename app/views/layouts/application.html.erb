@@ -3,20 +3,29 @@
   <head>
     <title>Tasks</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <!-- верхняя черная полоска-header -->
   <div id="up"></div>
 
+    <!-- отображение уведомлений о выполнении действий -->
+    <div id="flash" class="col-xs-12">
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+      <% end -%>
+    </div><br> 
+    
+    <!-- контейнер-обёртка -->
     <div class="container">
       <div class="row col-xs-12">
 	     <h2>SIMPLE TODO LISTS</h2>
 	     <h4>FROM RUBY GARAGE</h4>
       </div>
-
+     
+      <!-- Основной контейнер -->
       <div id="main-container" class="container">
         <div class="row">
           <div class="col-xs-3"></div>
@@ -32,6 +41,7 @@
       </div>  
     </div>     
 
+    <!-- нижняя черная полоска-footer -->
     <div id="down"></div>
   </body>
 </html>

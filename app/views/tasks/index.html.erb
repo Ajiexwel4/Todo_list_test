@@ -34,7 +34,9 @@
           <td class="task_checkbox"><%= check_box_tag :task, 1, task.status %></td>
           <td class ="lline"></td>
           <td class="tasks_name"><%= task.name %></td>
-          <td colspan ="3" class="switch"></td>
+          <td colspan ="3" class="switch">         
+            <div id="getting-started"></div> <!-- jquery.countdown плагин -->         
+          </td>
           <td class="t_onlink"><span class="ui-icon ui-icon-carat-2-n-s"></span></td>
           <td class="t_onlink"><i class="glyphicon glyphicon-pencil edit_t"></i></td>
           <td class="t_onlink"><i class="glyphicon glyphicon-trash delete_t"></i></td>
@@ -52,7 +54,7 @@
 <!-- Кнопка добавления нового проекта  -->
 <%= button_tag '<div><i class="glyphicon glyphicon-plus"></i> Add TODO List</div>'.html_safe, class: "btn btn-primary"%>
 
-<br><br><br><br>
+<br><br><br>
 
 
 

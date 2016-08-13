@@ -28,9 +28,11 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to tasks_url, notice: 'Project was successfully created.' }
+        flash[:success] = 'Project was successfully created.'
+        format.html { redirect_to tasks_url }
         format.json { render :show, status: :created, location: @project }
       else
+        flash[:danger] = 'There was a problem creating the Project.'
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
@@ -42,9 +44,11 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to tasks_url, notice: 'Project was successfully updated.' }
+        flash[:success] = 'Project was successfully updated.'
+        format.html { redirect_to tasks_url }
         format.json { render :show, status: :ok, location: @project }
       else
+        flash[:danger] = 'There was a problem updating the Project.'
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
@@ -56,7 +60,8 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'Project was successfully destroyed.' }
+      flash[:success] = 'Project was successfully destroyed.'
+      format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
   end
