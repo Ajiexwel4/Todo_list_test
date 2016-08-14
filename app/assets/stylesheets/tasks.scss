@@ -5,40 +5,55 @@
 //обертка-контейнер таблицы 
 .table_container {
 	margin-left: -10%;	 	 
-	tbody { background-color: #FFFFFF; }
-	.lline { padding: 2px; }
+	tbody { background-color: #FFFFFF; }	
 }
 
 //шапка таблицы(название проекта)
 .table_head_pname {
 	cursor: pointer;
-	height: 35px;
+	height: 40px;
 	background-color: #4373B1;
 	color: white;
-	.glyphicon-list-alt	{color: #060000;}
-	font-size: 16px;	
+	font-size: 16px;
+	.glyphicon-list-alt	{
+		color: #2B3441;
+		cursor: pointer;
+		position: relative;	
+		left: 3px;
+		top: -1px;
+		font-size: 24px;
+		transform: rotate(90deg); 
+	}		
 }
 
 //стилизация иконок
 .glyphicon-pencil, .glyphicon-trash, .ui-icon {color: #98B0D2; cursor: pointer;}
-.glyphicon-plus {color: #5C9273; }
+.glyphicon-plus {
+	color: #5C9273;
+	cursor: pointer;
+	position: relative;
+	left: 5px;
+ }
 
 //шапка таблицы(добавление задачи)
 .table_head_add {
 	background-color: #D0D0D0;
 	font-size: 20px;
+	height: 40px;
+
 	input, .btn {
 		font-size: 10px;
 		height: 25px;
 		border-radius:0;
 	}
 	input {
-		margin-left: 5px;
+		margin-right: -5px;
 		border-radius: 5px 0 0 5px;
 	}
 	.btn {
 		color: white;
 		margin-left: -5px;
+		padding-top: 4px;
 		border-radius: 0 5px 5px 0;
 	}	
 	.form-control { width: 500px; }
@@ -52,12 +67,17 @@
 	}
 }
 
+//ячейки чекбоксов
+.task_checkbox {
+	padding-right: 4px;
+	padding-bottom: 3px;
+}
+
 //ячейка с названием задачь 
 .tasks_name {
 	cursor: pointer;
-	height: 25px;
 	width: 500px;
-	padding: 2%;
+	padding-top: 1%;	
 	color: #90959B;
 	font-family: Helvetica;
 	font-weight: bold;
@@ -72,9 +92,9 @@
 	.glyphicon-plus { 
 		color: #243654;
 		font-size: 20px;
-		margin-left: -5px;
-		padding-right: 5px;
-		padding-bottom: 5px;			
+		position: relative;			
+		left: -3px;
+		top: 3px;	
 	}
 }
 
@@ -91,13 +111,25 @@ tr .t_onlink, .p_onlink {
 // удаление фона со ссылок
 a:link { background:none; }
 
-//таймер
+//таймер срока выполнения задач
 #getting-started { 
 	padding: 7px 0 0 3px; 
 	font-weight: bolder; 
 	color: crimson;
 }
 
-
-
-
+//приоритет задач
+.priority {
+	padding: 2px; 
+	div {
+		height: 10px;
+		width: 5px;
+		border: 1px solid white; 
+		background: #F0EDED;
+		cursor: pointer;
+ 	}
+}
+//псевдокласс для обозначения приоритета
+.set_priority {
+	background: #57802A !important;
+}

@@ -24,6 +24,27 @@ $(document).ready().on("turbolinks:load", function() {
 		$(tr).addClass('success').css("background","#D6FFD6");
 	}
 
+	//выпадающее меню с названиями проектов
+	$('.dropdown-toggle').dropdown('toggle');
+	
+	$(".dropdown-menu li a").bind('click', function(){
+		var id = $(this).attr('data-p_id');
+		// var current_project_tr = $(this).parents('tr');
+  		// var project_th = $(this).parent().parent().siblings('div');
+  		var project_tr = $(this).parents('.dropdown').children('div'); // <%= project.name %>
+  // 		$.ajax({
+		// 	url: '/projects/' + id,
+		// 	type: "GET",
+		// 	data: { project: { name } },
+		// 	dataType: 'json',
+		// 	success: function(data) {
+		// 		var a = JSON.parse(data);
+		// 		// $(project_tr).html(data);
+		// 		console.log(a);			
+		// 	}		
+		// });
+
+  	});
 	
 	
 });

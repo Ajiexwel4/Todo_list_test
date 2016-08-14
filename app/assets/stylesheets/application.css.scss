@@ -14,9 +14,11 @@
   *= require_tree .
  */
 
+//импорт библиотек "bootstrap"
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//настройки html-документа, установка фона
 body, html {
 	background: url(view.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -26,6 +28,7 @@ body, html {
 	overflow: hidden;	
 }
 
+//настройки отображения флеш-сообщений
 #flash { 
 	text-align: center; 
 	position: fixed;
@@ -35,6 +38,7 @@ body, html {
 	
 }
 
+//черные полосы сверху и снизу
 #up, #down {
 	position: absolute;
 	background: #342A2A;
@@ -43,25 +47,43 @@ body, html {
 	left:0; right:0;
 
 }
-
 #up {top:0;} 
 #down {bottom:0;  position: fixed;}
 
+//настройки заголовков
 h2, h4, h6 { 
 	text-align: center;
 	margin-left: 3%;
 	}
-h2 {
-	font-weight: bolder;
-	}
+
+h2 { font-weight: bolder; }
 
 h4 {
 	text-color: #928888;
 	margin-top: -10px;
 }
-h6 {
-	color: white;
+
+h6 { color: white; }
+
+//цвет шрифта в списке выпадающего меню
+li { color: black; }
+
+//разделитель между кнопками управления проектами
+.divider_p {
+	height: 15px;
+	width: 1pt;
+	border: 1px dotted #98B0D2;
+	position: absolute;
+	right: -75%;
+	top: 0;
 }
 
-
-
+//разделитель между кнопками управления задачами
+.divider_t {
+	height: 12px;
+	width: 1px;
+	border: 1px dotted #98B0D2;
+	position: absolute;
+	left: -50%;	
+	top: 1px;
+}
