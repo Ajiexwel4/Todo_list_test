@@ -100,4 +100,34 @@ $(document).ready().on("turbolinks:load", function() {
 		}
 	});
 
+	// приоритeт задач
+	var up_down = function(){	
+
+	// перемещение между задачами вверх
+		$('.up').on('click', function(){
+			var current = $('#current_t');
+			var prev_task = $(current).prev()[0];
+			// var first_t = $('.active').siblings()[0];
+			console.log( prev_task);
+			if (prev_task) {
+				$(prev_task).before($(current).removeAttr('id','current_t'));
+				$('.switch').show(); $('.t_onlink').hide();				
+			}
+
+		});
+
+		// перемещение между задачами ввниз			
+		$('.down').on('click', function(){
+			var current = $('#current_t');
+			var next_task = $('#current_t').next()[0];
+			var not_t = $('.active').siblings('.not_t');
+			console.log(not_t, next_task);
+			if ((not_t[0] == next_task) || (not_t[1] == next_task)) {
+			} else {
+				$('.switch').show(); $('.t_onlink').hide();
+				$(next_task).after($(current).removeAttr('id','current_t'));		
+			}
+		});
+	}
+	up_down();
 });

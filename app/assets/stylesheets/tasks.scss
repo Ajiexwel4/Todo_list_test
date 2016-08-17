@@ -11,7 +11,7 @@
 //шапка таблицы(название проекта)
 .table_head_pname {
 	cursor: pointer;
-	height: 40px;
+	height: 45px;
 	background-color: #4373B1;
 	color: white;
 	font-size: 16px;
@@ -24,16 +24,37 @@
 		font-size: 24px;
 		transform: rotate(90deg); 
 	}		
+	.dropdown { 
+		max-width: 500px;
+		text-overflow: ellipsis;
+		white-space: nowrap; 
+		// overflow:hidden;
+		
+	}
 }
 
 //стилизация иконок
-.glyphicon-pencil, .glyphicon-trash, .ui-icon {color: #98B0D2; cursor: pointer;}
+.glyphicon-pencil, .glyphicon-trash, .glyphicon-chevron-up, .glyphicon-chevron-down {color: #98B0D2; cursor: pointer;}
 .glyphicon-plus {
 	color: #5C9273;
 	cursor: pointer;
 	position: relative;
 	left: 5px;
  }
+.t_onlink .glyphicon-chevron-up,{
+	margin-left: -5px;
+	margin-right: -5px;
+	position: relative;
+	font-size: 10px;
+	left: 5px; top: -5px;
+}
+
+.t_onlink .glyphicon-chevron-down {
+	margin:0;
+	position: relative;
+	font-size: 10px;
+	left: 0; top: 5px;
+}
 
 //шапка таблицы(добавление задачи)
 .table_head_add {
@@ -81,7 +102,7 @@
 	color: #90959B;
 	font-family: Helvetica;
 	font-weight: bold;
-	font-size: 12px;		
+	font-size: 12px;	
 }
 
 //кнопка добавления нового проэкта
@@ -133,3 +154,34 @@ a:link { background:none; }
 .set_priority {
 	background: #57802A !important;
 }
+
+//настройки переключателей страниц (will_paginate)
+.row_paginate i {
+	margin: 0; 
+	position: relative;	
+	margin-left: 290px;
+	
+
+}
+.will_paginate_tasks {
+	display:none;
+	height: 30px;	
+	border-radius: 0 0 10px 10px;
+	margin-left: -40px;
+	.pagination {
+		margin:0;
+		margin-left: 33%;
+		top: 10px;
+	}
+}
+.will_paginate_projects {
+	.pagination {
+		position: relative;
+		margin: 2px;
+		margin-left: 18%;
+		top: 18px;
+		a { color: white; }
+		.disabled {color: #4373B1;}
+	}
+}
+
