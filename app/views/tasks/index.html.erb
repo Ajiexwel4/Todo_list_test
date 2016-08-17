@@ -57,7 +57,7 @@
           </td>
           <td class="tasks_name"><%= task.name %></td>
           <td colspan ="3" class="switch">         
-            <div id="getting-started"></div> <!-- jquery.countdown плагин -->         
+            <div id="getting-started" data-task_deadline="<%= task.deadline %>"><%= task.deadline %></div> <!-- jquery.countdown плагин -->         
           </td>
           <td class="t_onlink"><i class="glyphicon glyphicon-chevron-up up"></i><i class="glyphicon glyphicon-chevron-down down"></i></td>
           <td class="t_onlink"><i class="glyphicon glyphicon-pencil edit_t"><div class="divider_t"></div></i></td>
