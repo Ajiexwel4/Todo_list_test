@@ -15,6 +15,7 @@
        <tr class = "table_head_pname" data-project_id="<%= project.id %>">
           <th colspan="2"><i class="glyphicon glyphicon-list-alt"></i></th>
           <th colspan="2">
+          
             <!-- выпадающее меню -->
             <div class="dropdown">
                 <div data-target="#" data-toggle="dropdown"><%= project.name %></div>
@@ -69,7 +70,7 @@
         <td colspan="8" class="row_paginate">
           <i class="glyphicon glyphicon-chevron-down"></i>
           <div class="will_paginate_tasks">
-            <%= will_paginate @tasks, renderer: BootstrapPagination::Rails%>
+            <%= will_paginate @tasks, :param_name => :tasks_page, renderer: BootstrapPagination::Rails%>
           </div>
         </td>
       </tr>

@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.paginate(:page => params[:page], per_page: 8)
+    @tasks = Task.all.paginate(:page => params[:tasks_page], per_page: 8)
     @projects = Project.all.paginate(:page => params[:page], per_page: 2)
   end
 

@@ -9,7 +9,7 @@
 }
 
 //шапка таблицы(название проекта)
-.table_head_pname {
+.table_head_pname {	
 	cursor: pointer;
 	height: 45px;
 	background-color: #4373B1;
@@ -181,7 +181,8 @@ a:link { background:none; }
 		margin-left: 18%;
 		top: 18px;
 		a { color: white; }
-		.disabled {color: #4373B1;}
+		.disabled {color: #4373B1;}		
 	}
+	display:none;
 }
 
