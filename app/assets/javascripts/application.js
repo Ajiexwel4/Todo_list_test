@@ -38,6 +38,8 @@ $(document).ready().on("turbolinks:load", function() {
 	//отображение пареключения странис с проэктами
 	// $('.will_paginate_projects').show();
 	
+	//скрытие области введения даты в меню выбора даты 
+	$("#dialog-confirm").hide();
 
 	//выпадающее меню с названиями проектов
 	// $('.dropdown-toggle').dropdown('toggle');	

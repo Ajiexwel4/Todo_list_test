@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<!-- модальное окно с выбором даты-->
+<div id="dialog-confirm" title="Input your deadline here:">
+  <p>Data:<input type="text" id="datepicker"></p>
+</div>
+
  <!--формирование таблиц в цикле с лимитом в 2 проекта -->
   <% @projects.order("id").limit(2).each do |project| %>
 <div class="table_container container">
@@ -55,6 +60,7 @@
               <div></div>
               <div></div> 
           </td>
+
           <td class="tasks_name"><%= task.name %></td>
           <td colspan ="3" class="switch">         
             <div id="getting-started" data-task_deadline="<%= task.deadline %>"><%= task.deadline %></div> <!-- jquery.countdown плагин -->         
