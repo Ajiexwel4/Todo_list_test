@@ -4,8 +4,23 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.paginate(:page => params[:tasks_page], per_page: 8)
-    @projects = Project.all.paginate(:page => params[:page], per_page: 2)
+    @tasks = Task.all          #.paginate(:page => params[:tasks_page], per_page: 8)  <---для постраничного вывода задач гемом will_paginate
+    @projects = Project.all    #.paginate(:page => params[:page], per_page: 2)        #<---для постраничного вывода проектов гемом will_paginate
+
+    #query1
+    if params[:status]
+      @tasks = @tasks.where(:status => (params[:status])).order('status ASC')
+    end
+    #query2
+    if params[:id]
+      @tasks = @tasks.where(:id => (params[:id])).order('id DESC')      
+    end
+    #query3
+    if params[:project_id]
+      @tasks = @tasks.where(:project_id => (params[:project_id]))
+      @projects = @projects.order("name DESC")  
+    end
+
   end
 
   # GET /tasks/1

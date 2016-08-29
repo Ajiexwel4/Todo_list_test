@@ -19,51 +19,34 @@
 
 $(document).ready().on("turbolinks:load", function() {
 	//убирает с экрана сообщение о действии
-	$('.alert').fadeOut(5000);
+	$('.alert').fadeOut(3000);
 
 	//меняет фон и виделение текущей позиции для завершенных задач 	 	
 	if ($("input[type='checkbox']:checked")){	
 		var tr = $("input[type='checkbox']:checked").parents('tr');
 		$(tr).addClass('success').css("background","#D6FFD6");
 	}
-
-	//отображение переключателя страниц с задачами при наведении курсора
-	$('.row_paginate')
-	.bind('mouseenter', function(){
-		var pagin_div = $(this).children('div').show();		
-		})
-	.bind('mouseleave', function(){
-		$(this).children('div').hide();				
-	});
-	//отображение пареключения странис с проэктами
-	// $('.will_paginate_projects').show();
 	
 	//скрытие области введения даты в меню выбора даты 
 	$("#dialog-confirm").hide();
 
-	//выпадающее меню с названиями проектов
-	// $('.dropdown-toggle').dropdown('toggle');	
-	// изменение названия проэкта из дропдаун меню
-	// $(".dropdown-menu li a").bind('click', function(){
-	// 	var id = $(this).attr('data-p_id');
- // 		var project_th = $(this).parent().parent().siblings('div');
- //  		var project_id = $(this).parents('tr');
- //  		var p_id = $(project_id).attr('data-project_id');
- //  		//получения данных проекта с сервера
- //  		$.ajax({
-	// 		url: '/projects/' + id,
-	// 		type: "GET",
-	// 		dataType: 'json',
-	// 		success: function(data) {
-	// 			// обрабатываем полученные данные 
-	// 			$.each(data, function() {        			    
- //        			$(project_th).text(data['name']); //заменяем имя существующего проєкта на имя из дропдаун меню
- //        		});        			 
- //        	},		
-	// 	});
- //  	});
+	//клик на название проекта скрывает задачи этого проэкта
+	$('.pname').click(function(){
+		var tasks = $(this).parents('thead').siblings('tbody');
+		$(tasks).animate({height: 'toggle'});
+	});	
+
+	//отображение переключателя страниц с задачами при наведении курсора
+	// $('.row_paginate')
+	// .bind('mouseenter', function(){
+	// 	var pagin_div = $(this).children('div').show();		
+	// 	})
+	// .bind('mouseleave', function(){
+	// 	$(this).children('div').hide();				
+	// });
 	
-	
+	//отображение пареключения странис с проэктами
+	// $('.will_paginate_projects').show();
 });
 
 

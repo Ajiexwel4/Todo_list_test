@@ -87,7 +87,5 @@ $(document).ready().on("turbolinks:load", function() {
 		});
 	}
 	timer();
-	var all_timers = $("#getting-started").find('[data-task_deadline]', function(){
-		condole.log(this);
-	})
+
 });

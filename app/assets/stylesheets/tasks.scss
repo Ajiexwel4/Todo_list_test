@@ -161,8 +161,6 @@ a:link { background:none; }
 	margin: 0; 
 	position: relative;	
 	margin-left: 290px;
-	
-
 }
 .will_paginate_tasks {
 	display:none;
@@ -187,7 +185,16 @@ a:link { background:none; }
 	display:none;
 }
 
+//размер окна выбора даты
 #datepicker {
-	width: 244px;
-	
+	width: 244px;	
 }
+
+#query {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+

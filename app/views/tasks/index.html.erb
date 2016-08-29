@@ -6,33 +6,20 @@
 </div>
 
  <!--формирование таблиц в цикле с лимитом в 2 проекта -->
-  <% @projects.order("id").limit(2).each do |project| %>
+  <% @projects.order(:id).each do |project| %>
 <div class="table_container container">
   <div class="table-responsive">
    
     <table class="table-hover table-bordered">
       <!-- Шапка таблицы --> 
       <thead>
-        
-        <div class="will_paginate_projects"><%= page_entries_info @projects %><%= will_paginate @projects, :page_links => false%></div>
+        <!-- постраничный выввод для проэктов с помощью гема will_paginate -->
+        <!-- <div class="will_paginate_projects"><%#= page_entries_info @projects %><%#= will_paginate @projects, :page_links => false%></div> -->
        
        <!-- Название проекта  -->
        <tr class = "table_head_pname" data-project_id="<%= project.id %>">
           <th colspan="2"><i class="glyphicon glyphicon-list-alt"></i></th>
-          <th colspan="2">
-          
-            <!-- выпадающее меню -->
-            <div class="dropdown">
-                <div data-target="#" data-toggle="dropdown"><%= project.name %></div>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <% Project.all.each do |p| %>
-                    <li>
-                      <a data-target="#" data-p_id="<%= p.id %>"><%= p.name %></a>
-                    </li>
-                    <% end %>
-                 </ul>                                
-            </div> 
-          </th>  
+          <th colspan="2" class="pname"><%= project.name %></th>  
           <td colspan ="2" class="switch"></th>
           <th class="p_onlink"><i class="glyphicon glyphicon-pencil edit_p"><div class="divider_p"></div></i></th>
           <th class="p_onlink"><i class="glyphicon glyphicon-trash delete_p"></i></th>
@@ -49,17 +36,19 @@
     <!-- Тело таблицы/перечень задач проекта с лимитом отображения в 4 задачи  -->
     <tbody class="table-hover">
 
-      <% @tasks.where(project_id: project.id).order("status DESC").limit(4).each do |task| %>
+      <% @tasks.where(project_id: project.id).order(:status,:id).each do |task| %>
         
         <!-- список задач -->      
         <tr class="active" data-task_id="<%= task.id %>">
           <td class="task_checkbox"><%= check_box_tag :task, 1, task.status %></td>
+        
+          <!-- приоритет задач -->
           <td class ="priority">          
+              <!-- <div></div>
               <div></div>
               <div></div>
-              <div></div>
-              <div></div> 
-          </td>
+              <div></div> --> 
+          </td> 
 
           <td class="tasks_name"><%= task.name %></td>
           <td colspan ="3" class="switch">         
@@ -72,14 +61,14 @@
       <% end %>
 
       <!-- переход по страницам с задачами -->
-      <tr class="not_t">  
+      <!-- <tr class="not_t">  
         <td colspan="8" class="row_paginate">
           <i class="glyphicon glyphicon-chevron-down"></i>
           <div class="will_paginate_tasks">
-            <%= will_paginate @tasks, :param_name => :tasks_page, renderer: BootstrapPagination::Rails%>
+            <%#= will_paginate @tasks, :param_name => :tasks_page, renderer: BootstrapPagination::Rails%>
           </div>
         </td>
-      </tr>
+      </tr> -->
 
     </tbody>
     </table>
@@ -91,6 +80,24 @@
 <!-- Кнопка добавления нового проекта  -->
 <%= button_tag '<div><i class="glyphicon glyphicon-plus"></i> Add TODO List</div>'.html_safe, class: "btn btn-primary"%>
 <br><br>
+
+<!-- выпадающее меню для запросов -->
+ <div class="dropdown" id="query">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Query
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a data-target="#" href="/tasks?status">All statuses alphabeticaly ordered</a></li>
+    <li><a data-target="#" href="/tasks?id">All tasks in each project, order by task count desc</a></li>
+    <li><a data-target="#" href="#">All tasks in each project, order by project name desc</a></li>
+    <li><a data-target="#" href="#">4</a></li>
+    <li><a data-target="#" href="#">5</a></li>
+    <li><a data-target="#" href="#">6</a></li>
+    <li><a data-target="#" href="#">7</a></li>
+    <li><a data-target="#" href="#">8</a></li>
+  </ul>
+</div>
+
+
 
 
 
