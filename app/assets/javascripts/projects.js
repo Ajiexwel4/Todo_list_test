@@ -47,12 +47,13 @@ $(document).ready().on("turbolinks:load", function() {
   	});
 
   	//добавление нового проекта 
-	$(".btn-primary").on('click', function() {
+	$("#add_project").on('click', function() {
 		var p_name = prompt('Type a name for new project:');
+		var us_id = $("user").attr('data-user_id'); 
 		$.ajax({
 			url: "/projects",
 			type: "POST",
-			data: { project: {name: p_name} },
+			data: { project: {name: p_name, user_id: us_id} },
 			success: function(result) {
 				console.log(result);
 				return false;

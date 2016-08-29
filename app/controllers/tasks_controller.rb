@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all          #.paginate(:page => params[:tasks_page], per_page: 8)  <---для постраничного вывода задач гемом will_paginate
-    @projects = Project.all    #.paginate(:page => params[:page], per_page: 2)        #<---для постраничного вывода проектов гемом will_paginate
+    @projects = Project.where(user_id: current_user.id).all    #.paginate(:page => params[:page], per_page: 2)        #<---для постраничного вывода проектов гемом will_paginate
 
     #query1
     if params[:status]

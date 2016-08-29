@@ -1,9 +1,9 @@
 class Task < ApplicationRecord
 	belongs_to :project
-	
+	belongs_to :user
 	validates :name, presence: true
 
-	scope :task_status, -> {@tasks = @tasks.order('status DESC')}
+	# scope :task_status, -> {@tasks = @tasks.order('status DESC')}
 	# scope :task_count_desc, -> {where('project_id = ?', project_id).order('name DESC')}
 	# scope :task_count_pname, -> {where('poject_id = ?', project_id)} &&  scope :pname, -> {where('name = ?', Project[name])}
 	# scope :task_all_N, -> {find('name = ?', 'N%')}

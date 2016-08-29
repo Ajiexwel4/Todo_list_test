@@ -52,3 +52,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 #gem 'will_paginate'
 #gem 'will_paginate-bootstrap'
+
+gem 'devise'

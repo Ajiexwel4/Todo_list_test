@@ -156,45 +156,47 @@ a:link { background:none; }
 	background: #57802A !important;
 }
 
-//настройки переключателей страниц (will_paginate)
-.row_paginate i {
-	margin: 0; 
-	position: relative;	
-	margin-left: 290px;
-}
-.will_paginate_tasks {
-	display:none;
-	height: 30px;	
-	border-radius: 0 0 10px 10px;
-	margin-left: -40px;
-	.pagination {
-		margin:0;
-		margin-left: 33%;
-		top: 10px;
-	}
-}
-.will_paginate_projects {
-	.pagination {
-		position: relative;
-		margin: 2px;
-		margin-left: 18%;
-		top: 18px;
-		a { color: white; }
-		.disabled {color: #4373B1;}		
-	}
-	display:none;
-}
+// //настройки переключателей страниц (will_paginate)
+// .row_paginate i {
+// 	margin: 0; 
+// 	position: relative;	
+// 	margin-left: 290px;
+// }
+// .will_paginate_tasks {
+// 	display:none;
+// 	height: 30px;	
+// 	border-radius: 0 0 10px 10px;
+// 	margin-left: -40px;
+// 	.pagination {
+// 		margin:0;
+// 		margin-left: 33%;
+// 		top: 10px;
+// 	}
+// }
+// .will_paginate_projects {
+// 	.pagination {
+// 		position: relative;
+// 		margin: 2px;
+// 		margin-left: 18%;
+// 		top: 18px;
+// 		a { color: white; }
+// 		.disabled {color: #4373B1;}		
+// 	}
+// 	display:none;
+// }
 
 //размер окна выбора даты
 #datepicker {
 	width: 244px;	
 }
 
+//запросы
 #query {
 	position: absolute;
 	top: 0;
 	right: 0;
 }
+
 
 
 

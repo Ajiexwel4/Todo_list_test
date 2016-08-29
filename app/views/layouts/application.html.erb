@@ -9,18 +9,46 @@
 
   <body>
   <!-- верхняя черная полоска-header -->
-  <div id="up"></div>
+  <div id="up">    
+    <!-- devise аутентификация -->
+    <div id="user_auth">
+      <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>. Not you?
+        <%= link_to "Sign out", destroy_user_session_path, method: :get %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+      <% end %>
+    </div>    
 
+    <!-- выпадающее меню для запросов -->
+ <div class="dropdown" id="query">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Query
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a data-target="#" href="/tasks?status">All statuses ASC ordered</a></li>
+    <li><a data-target="#" href="/tasks?id">All task ordered by t_name desc</a></li>
+    <li><a data-target="#" href="#">All tasks ordered by p_name desc</a></li>
+    <li><a data-target="#" href="#">4</a></li>
+    <li><a data-target="#" href="#">5</a></li>
+    <li><a data-target="#" href="#">6</a></li>
+    <li><a data-target="#" href="#">7</a></li>
+    <li><a data-target="#" href="#">8</a></li>
+  </ul>
+</div>
+  </div>
+  
+
+ 
     <!-- отображение уведомлений о выполнении действий -->
     <div id="flash" class="col-xs-12">
       <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-      <% end -%>
-    </div><br>
+      <% end  %>
+    </div>
     
     <!-- контейнер-обёртка -->
     <div class="container">
-      <div class="row col-xs-12">
+      <div class="row col-xs-12 centr">
 	     <h2>SIMPLE TODO LISTS</h2>
 	     <h4>FROM RUBY GARAGE</h4>
       </div>
@@ -36,12 +64,14 @@
         </div>   
       </div>
 
-      <div class="row col-xs-12">
-        <h6>© Ruby Garage</h6>     
-      </div>  
+        
     </div>     
 
     <!-- нижняя черная полоска-footer -->
-    <div id="down"></div>
+    <div id="down">
+      <div id="rg" class="row col-xs-12 centr">
+        <h6>© Ruby Garage</h6>     
+      </div>
+    </div>
   </body>
 </html>

@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all.paginate(:page => params[:page], per_page: 2)
+    @projects = Project.where(user_id: current_user.id).all
   end
 
   # GET /projects/1
@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Project.new
+    @project = Project.new(user_id: current_user.id)
   end
 
   # GET /projects/1/edit
@@ -74,6 +74,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:name,:user_id)
     end
 end

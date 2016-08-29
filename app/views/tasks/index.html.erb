@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+
+<!-- обозначение номера текущего пользователя для jQuery -->
+<user data-user_id="<%= current_user.id %>"></user>
+<br><br>
 
 <!-- модальное окно с выбором даты-->
 <div id="dialog-confirm" title="Input your deadline here:">
@@ -77,25 +80,13 @@
 
 <br><br>
 <% end %>
+
+
 <!-- Кнопка добавления нового проекта  -->
-<%= button_tag '<div><i class="glyphicon glyphicon-plus"></i> Add TODO List</div>'.html_safe, class: "btn btn-primary"%>
+<%= button_tag '<div><i class="glyphicon glyphicon-plus"></i> Add TODO List</div>'.html_safe, class: "btn btn-primary", id: "add_project"%>
 <br><br>
 
-<!-- выпадающее меню для запросов -->
- <div class="dropdown" id="query">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Query
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a data-target="#" href="/tasks?status">All statuses alphabeticaly ordered</a></li>
-    <li><a data-target="#" href="/tasks?id">All tasks in each project, order by task count desc</a></li>
-    <li><a data-target="#" href="#">All tasks in each project, order by project name desc</a></li>
-    <li><a data-target="#" href="#">4</a></li>
-    <li><a data-target="#" href="#">5</a></li>
-    <li><a data-target="#" href="#">6</a></li>
-    <li><a data-target="#" href="#">7</a></li>
-    <li><a data-target="#" href="#">8</a></li>
-  </ul>
-</div>
+
 
 
 
