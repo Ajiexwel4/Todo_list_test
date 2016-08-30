@@ -7,7 +7,7 @@ $(document).ready().on("turbolinks:load", function() {
 		$(this).attr('id','current_t');
 		$('#current_t .switch').hide();
 		$('#current_t .t_onlink').show();
-		set_priority(); 
+		// set_priority();  //фича не по заданию
 	 	})
 	.bind('mouseleave', function(){
 		$(this).removeAttr('id','current_t');

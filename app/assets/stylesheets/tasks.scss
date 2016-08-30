@@ -16,28 +16,21 @@
 	color: white;
 	font-size: 16px;
 	.glyphicon-list-alt	{
+		cursor: default;
 		color: #2B3441;
-		cursor: pointer;
 		position: relative;	
 		left: 3px;
 		top: -1px;
 		font-size: 24px;
 		transform: rotate(90deg); 
 	}		
-	.dropdown { 
-		max-width: 500px;
-		text-overflow: ellipsis;
-		white-space: nowrap; 
-		// overflow:hidden;
-		
-	}
 }
 
 //стилизация иконок
 .glyphicon-pencil, .glyphicon-trash, .glyphicon-chevron-up, .glyphicon-chevron-down {color: #98B0D2; cursor: pointer;}
 .glyphicon-plus {
 	color: #5C9273;
-	cursor: pointer;
+	cursor: default;
 	position: relative;
 	left: 5px;
  }
@@ -48,7 +41,6 @@
 	font-size: 10px;
 	left: 5px; top: -5px;
 }
-
 .t_onlink .glyphicon-chevron-down {
 	margin:0;
 	position: relative;
@@ -151,51 +143,18 @@ a:link { background:none; }
 		cursor: pointer;
  	}
 }
-//псевдокласс для обозначения приоритета
-.set_priority {
-	background: #57802A !important;
-}
-
-// //настройки переключателей страниц (will_paginate)
-// .row_paginate i {
-// 	margin: 0; 
-// 	position: relative;	
-// 	margin-left: 290px;
-// }
-// .will_paginate_tasks {
-// 	display:none;
-// 	height: 30px;	
-// 	border-radius: 0 0 10px 10px;
-// 	margin-left: -40px;
-// 	.pagination {
-// 		margin:0;
-// 		margin-left: 33%;
-// 		top: 10px;
-// 	}
-// }
-// .will_paginate_projects {
-// 	.pagination {
-// 		position: relative;
-// 		margin: 2px;
-// 		margin-left: 18%;
-// 		top: 18px;
-// 		a { color: white; }
-// 		.disabled {color: #4373B1;}		
-// 	}
-// 	display:none;
-// }
 
 //размер окна выбора даты
 #datepicker {
 	width: 244px;	
 }
 
-//запросы
-#query {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
+////псевдокласс для обозначения приоритета(фича не по заданию)
+// .set_priority {
+// 	background: #57802A !important;
+// }
+
+
 
 
 

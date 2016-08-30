@@ -50,7 +50,7 @@ $(document).ready().on("turbolinks:load", function() {
 
 								//тестировка и выполнение входящих данных		
 								try {
-									//console.log(this,current_t,deadline,c_t_id);
+									
 									//проверка вводимой даты со следующей за текущей датой
 									var deadline = data.deadline;
 

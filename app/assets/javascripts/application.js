@@ -35,18 +35,6 @@ $(document).ready().on("turbolinks:load", function() {
 		var tasks = $(this).parents('thead').siblings('tbody');
 		$(tasks).animate({height: 'toggle'});
 	});	
-
-	//отображение переключателя страниц с задачами при наведении курсора
-	// $('.row_paginate')
-	// .bind('mouseenter', function(){
-	// 	var pagin_div = $(this).children('div').show();		
-	// 	})
-	// .bind('mouseleave', function(){
-	// 	$(this).children('div').hide();				
-	// });
-	
-	//отображение пареключения странис с проэктами
-	// $('.will_paginate_projects').show();
 });
 
 

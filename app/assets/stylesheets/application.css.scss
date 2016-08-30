@@ -38,7 +38,7 @@ body, html {
 	
 }
 
-//черные полосы сверху и снизу
+//header и footer
 #up, #down {
 	position: fixed;
 	background: #342A2A;
@@ -65,11 +65,7 @@ h4 {
 	text-color: #928888;
 	margin-top: -10px;
 }
-
 h6 { color: white; }
-
-//цвет шрифта в списке выпадающего меню
-li { color: black; }
 
 //разделитель между кнопками управления проектами
 .divider_p {
@@ -91,13 +87,14 @@ li { color: black; }
 	top: 1px;
 }
 
+//копирайт RG
 #rg {
 	position: absolute;
 	top: -35px;
 }
 
-//запросы
+//дропдаун меню запросов
 #query {
-	margin-top: 10px;
-	margin-right: 19%;
+	top: -15px;
+	left: 75%;
 }

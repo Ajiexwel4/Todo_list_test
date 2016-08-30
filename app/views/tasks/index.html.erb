@@ -16,9 +16,7 @@
     <table class="table-hover table-bordered">
       <!-- Шапка таблицы --> 
       <thead>
-        <!-- постраничный выввод для проэктов с помощью гема will_paginate -->
-        <!-- <div class="will_paginate_projects"><%#= page_entries_info @projects %><%#= will_paginate @projects, :page_links => false%></div> -->
-       
+             
        <!-- Название проекта  -->
        <tr class = "table_head_pname" data-project_id="<%= project.id %>">
           <th colspan="2"><i class="glyphicon glyphicon-list-alt"></i></th>
@@ -45,7 +43,7 @@
         <tr class="active" data-task_id="<%= task.id %>">
           <td class="task_checkbox"><%= check_box_tag :task, 1, task.status %></td>
         
-          <!-- приоритет задач -->
+          <!-- приоритет задач (фича не по заданию)-->
           <td class ="priority">          
               <!-- <div></div>
               <div></div>
@@ -62,17 +60,7 @@
           <td class="t_onlink"><i class="glyphicon glyphicon-trash delete_t"><div class="divider_t"></div></i></td>
         </tr>
       <% end %>
-
-      <!-- переход по страницам с задачами -->
-      <!-- <tr class="not_t">  
-        <td colspan="8" class="row_paginate">
-          <i class="glyphicon glyphicon-chevron-down"></i>
-          <div class="will_paginate_tasks">
-            <%#= will_paginate @tasks, :param_name => :tasks_page, renderer: BootstrapPagination::Rails%>
-          </div>
-        </td>
-      </tr> -->
-
+ 
     </tbody>
     </table>
    </div>

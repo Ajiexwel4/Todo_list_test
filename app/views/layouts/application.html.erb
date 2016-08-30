@@ -10,6 +10,7 @@
   <body>
   <!-- верхняя черная полоска-header -->
   <div id="up">    
+  
     <!-- devise аутентификация -->
     <div id="user_auth">
       <% if user_signed_in? %>
@@ -21,30 +22,27 @@
     </div>    
 
     <!-- выпадающее меню для запросов -->
- <div class="dropdown" id="query">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Query
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a data-target="#" href="/tasks?status">All statuses ASC ordered</a></li>
-    <li><a data-target="#" href="/tasks?id">All task ordered by t_name desc</a></li>
-    <li><a data-target="#" href="#">All tasks ordered by p_name desc</a></li>
-    <li><a data-target="#" href="#">4</a></li>
-    <li><a data-target="#" href="#">5</a></li>
-    <li><a data-target="#" href="#">6</a></li>
-    <li><a data-target="#" href="#">7</a></li>
-    <li><a data-target="#" href="#">8</a></li>
-  </ul>
-</div>
+    <div class="dropdown" id="query">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Query<span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a data-target="#" href="/tasks?status">All statuses ASC ordered</a></li>
+        <li><a data-target="#" href="/tasks?id">All task ordered by t_name desc</a></li>
+        <li><a data-target="#" href="#">All tasks ordered by p_name desc</a></li>
+        <li><a data-target="#" href="#">4</a></li>
+        <li><a data-target="#" href="#">5</a></li>
+        <li><a data-target="#" href="#">6</a></li>
+        <li><a data-target="#" href="#">7</a></li>
+        <li><a data-target="#" href="#">8</a></li>
+      </ul>
+    </div>
   </div>
-  
-
- 
+   
     <!-- отображение уведомлений о выполнении действий -->
     <div id="flash" class="col-xs-12">
       <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: "alert alert-#{name}" %>
       <% end  %>
-    </div>
+    </div><br>
     
     <!-- контейнер-обёртка -->
     <div class="container">
@@ -62,9 +60,7 @@
           </div>
           <div class="col-xs-3"></div>
         </div>   
-      </div>
-
-        
+      </div>        
     </div>     
 
     <!-- нижняя черная полоска-footer -->
