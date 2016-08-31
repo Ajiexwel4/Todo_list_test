@@ -20,21 +20,6 @@
         <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
       <% end %>
     </div>    
-
-    <!-- выпадающее меню для запросов -->
-    <div class="dropdown" id="query">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Query<span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a data-target="#" href="/tasks?status">All statuses ASC ordered</a></li>
-        <li><a data-target="#" href="/tasks?id">All task ordered by t_name desc</a></li>
-        <li><a data-target="#" href="#">All tasks ordered by p_name desc</a></li>
-        <li><a data-target="#" href="#">4</a></li>
-        <li><a data-target="#" href="#">5</a></li>
-        <li><a data-target="#" href="#">6</a></li>
-        <li><a data-target="#" href="#">7</a></li>
-        <li><a data-target="#" href="#">8</a></li>
-      </ul>
-    </div>
   </div>
    
     <!-- отображение уведомлений о выполнении действий -->
