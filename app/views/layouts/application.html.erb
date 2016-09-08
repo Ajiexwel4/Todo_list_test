@@ -20,6 +20,21 @@
         <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
       <% end %>
     </div>    
+  
+    <!-- выпадающее меню для запросов -->
+    <div class="dropdown" id="query">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Query<span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a data-target="#" href="/query/statuses_report">1.Statuses report</a></li>
+        <li><a data-target="#" href="/query/count_task_project_desc">2.Count task project desc</a></li>
+        <li><a data-target="#" href="/query/count_task_project_name">3.Count task ordered by project name</a></li>
+        <li><a data-target="#" href="/query/task_having_n">4.Tasks having N%</a></li>
+        <li><a data-target="#" href="/query/contain_a_mid">5.Projects having %a% and tasks count</a></li>
+        <li><a data-target="#" href="/query/duplicate_name_asc">6.Tasks with duplicate names ASC</a></li>
+        <li><a data-target="#" href="/query/matches_name_status">7.Tasks having matches name and status</a></li>
+        <li><a data-target="#" href="/query/pname_more_10tasks_done">8.Project names more >10 tasks done</a></li>
+      </ul>
+    </div>
   </div>
    
     <!-- отображение уведомлений о выполнении действий -->

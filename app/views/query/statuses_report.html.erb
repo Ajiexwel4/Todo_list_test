@@ -1,0 +1,22 @@
+<h5>All statuses, not repeating, alphabetically ordered</h5>
+
+<table class= "table-bordered">
+  	<thead>
+		<tr>
+			<th>Status</th>
+			<th>Name</th>
+		</tr>
+  	</thead> 
+	<tbody>
+	<% @tasks.each do |task| %>
+	    <tr>
+	        <td><%= task.status %></td>
+	        <td><%= task.name %></td>
+	    </tr>
+	<% end %>
+    </tbody>
+</table>
+<br>
+
+
+<%= link_to 'Back', tasks_path %>

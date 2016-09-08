@@ -1,0 +1,22 @@
+<h5>The count of all tasks in each project, order by projects names</h5>
+
+<table class= "table-bordered">
+  	<thead>
+		<tr>
+			<th>Project</th>
+			<th>tasks count</th>
+		</tr>
+  	</thead> 
+	<tbody>
+<% @projects.each do |project| %>
+    <tr>
+        <td><%= project.name %></td>
+        <td><%= Task.where(project_id: project.id).to_a.length %></td>
+    </tr>
+<% end %>
+    </tbody>
+</table>
+<br>
+
+
+<%= link_to 'Back', tasks_path %>

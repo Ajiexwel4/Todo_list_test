@@ -1,0 +1,23 @@
+<h5>All projects containing the ‘a’ letter in the middle of the name, and show the tasks count near each project.</h5>
+
+<table class= "table-bordered">
+  	<thead>
+		<tr>
+			<th>Projects</th>
+      <th>Tasks count</th>
+      			
+		</tr>
+  	</thead> 
+	<tbody>
+  <% @projects.each do |project| %>
+      <tr>
+          <td><%= project.name %></td>          
+          <td><%= project.tasks.count %></td>          
+      </tr>
+  <% end %>
+    </tbody>
+</table>
+<br>
+
+
+<%= link_to 'Back', tasks_path %>

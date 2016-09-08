@@ -21,12 +21,13 @@ $(document).ready().on("turbolinks:load", function() {
 		var current_project = $(project_tr).attr('data-project_id');
 		var t_input = $(project_tr).siblings().children().children('input');
 		var t_name = t_input.val();
+		var us_id = $("user").attr('data-user_id');
 		 
 		if( t_name.length != 0) {		
 			$.ajax({
 				url: "/tasks",
 				type: "POST",
-				data: { task: {name: t_name, status: false, project_id: current_project } },
+				data: { task: {name: t_name, status: false, project_id: current_project, user_id: us_id } },
 				success: function(result) {
 					console.log(result);
 					return false;

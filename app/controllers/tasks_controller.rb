@@ -4,8 +4,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all          #.paginate(:page => params[:tasks_page], per_page: 8)  <---для постраничного вывода задач гемом will_paginate
-    @projects = Project.where(user_id: current_user.id).all    #.paginate(:page => params[:page], per_page: 2)        #<---для постраничного вывода проектов гемом will_paginate
+    @tasks = Task.where(user_id: current_user.id).all          
+    @projects = Project.where(user_id: current_user.id).all    
 
     #query1
     if params[:status]
@@ -93,7 +93,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :status, :project_id, :deadline)
+      params.require(:task).permit(:name, :status, :project_id, :deadline, :user_id)
     end
    
 end
